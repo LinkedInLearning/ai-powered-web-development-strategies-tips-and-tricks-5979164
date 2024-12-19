@@ -1,0 +1,35 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  header {
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .info-area,
+  .map-area,
+  .chat-area {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .map-area {
+    min-height: 300px;
+  }
+}

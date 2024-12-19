@@ -1,14 +1,20 @@
 {
-  "extensions": [
-    "GitHub.github-vscode-theme",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "ritwickdey.LiveServer",
-    "stylelint.vscode-stylelint"
-    // Additional Extensions Here
-  ],
-  "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
-  "postAttachCommand": "git pull --all"  
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    },
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["GitHub.github-vscode-theme", "GitHub.copilot"]
+    }
+  },
+  // Update welcome text and set terminal prompt to '$ '
+  "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
+  // Pull all branches
+  "postAttachCommand": "git pull --all"
 }
-
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
